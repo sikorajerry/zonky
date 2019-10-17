@@ -16,10 +16,10 @@ Pro sestavení aplikace použijeme maven příkaz
 Pro běh pak  
 ``` java -jar ./target/restclient-0.0.1-SNAPSHOT.jar```
 
-##Technologie
+## Technologie
 V projektu je použito : Spring , Jersey , Lombok , Mockito , Junit.
 
-##Popis
+## Popis
 Projekt je rozdělen  :
 
 1, factory - odpovědna za inicializaci webového klienta
