@@ -7,20 +7,19 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
-import java.util.Date;
 import java.util.List;
 
 /**
  * Component which printed data from remotely call
  */
 @Component
-public class CommonSampleTask {
-    Logger logger = LoggerFactory.getLogger(CommonSampleTask.class);
+public class PrintTask {
+    Logger logger = LoggerFactory.getLogger(PrintTask.class);
 
     private MarketplaceService marketplaceService;
 
     @Autowired
-    public CommonSampleTask(MarketplaceService marketplaceService) {
+    public PrintTask(MarketplaceService marketplaceService) {
          this.marketplaceService=marketplaceService;
     }
 

@@ -2,7 +2,7 @@ package cz.prague.js.home.restclient;
 
 import cz.prague.js.home.restclient.model.Marketplace;
 import cz.prague.js.home.restclient.service.MarketplaceService;
-import cz.prague.js.home.restclient.task.CommonSampleTask;
+import cz.prague.js.home.restclient.task.PrintTask;
 import org.junit.Assert;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -27,7 +27,7 @@ public class RestclientApplicationTests {
 	private MarketplaceService marketplaceService;
 
 	@InjectMocks
-	private CommonSampleTask commonSampleTask;
+	private PrintTask printTask;
 
 	@Test
 	public void commonSampleTaskTest() {
@@ -36,7 +36,7 @@ public class RestclientApplicationTests {
 
 		Mockito.when(marketplaceService.getMarketplaceDataInLastFiveMinutes()).thenReturn(marketplaces);
 
-		List<Marketplace> marketplacesFromUpdate = commonSampleTask.updateNewDataFromMarketplace();
+		List<Marketplace> marketplacesFromUpdate = printTask.updateNewDataFromMarketplace();
 
 		marketplaces.remove(1);
 
