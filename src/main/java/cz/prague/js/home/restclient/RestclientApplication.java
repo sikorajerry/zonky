@@ -1,6 +1,5 @@
 package cz.prague.js.home.restclient;
 
-import cz.prague.js.home.restclient.service.MarketplaceService;
 import cz.prague.js.home.restclient.task.CommonSampleTask;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.SpringApplication;
@@ -19,7 +18,7 @@ public class RestclientApplication {
 		SpringApplication.run(RestclientApplication.class, args);
 	}
 
-	@Scheduled(cron = "0 */1 * * * ?")
+	@Scheduled(cron = "0 */5 * * * ?")
 	public void cronJobSch() throws Exception {
 		task.printAllLastFiveMinutesRecords();
 	}

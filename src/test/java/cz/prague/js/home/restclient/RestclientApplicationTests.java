@@ -29,24 +29,19 @@ public class RestclientApplicationTests {
 	@InjectMocks
 	private CommonSampleTask commonSampleTask;
 
-//	@Test
-//	public void contextLoadsTest() {
-//		List<Marketplace> allMarketplaceData = service.getAllMarketplaceData();
-//
-//		System.out.println(allMarketplaceData);
-//	}
-
 	@Test
 	public void commonSampleTaskTest() {
 
-		Mockito.when(marketplaceService.getAllMarketplaceData()).thenReturn(preparedDataForTest());
+		List<Marketplace> marketplaces = preparedDataForTest();
 
-		List<Marketplace> marketplaces = commonSampleTask.updateNewDataFromMarketplace();
+		Mockito.when(marketplaceService.getMarketplaceDataInLastFiveMinutes()).thenReturn(marketplaces);
 
-		List<Marketplace> marketplaces1 = preparedDataForTest();
-		marketplaces1.remove(1);
+		List<Marketplace> marketplacesFromUpdate = commonSampleTask.updateNewDataFromMarketplace();
 
-		Assert.assertEquals(marketplaces.size(), marketplaces1.size());
+		marketplaces.remove(1);
+
+		Assert.assertEquals(marketplaces.get(0), marketplacesFromUpdate.get(0));
+		Assert.assertEquals(marketplaces.get(1), marketplacesFromUpdate.get(1));
 	}
 
 	private List<Marketplace> preparedDataForTest() {

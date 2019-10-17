@@ -35,7 +35,6 @@ public class Marketplace implements Serializable {
     private Boolean covered;
     private Double reservedAmount;
     private Double zonkyPlusAmount;
-    @DateTimeFormat(pattern = "yyyy.MM.dd HH:mm:ssZZ")
     private Date datePublished;
     private Boolean published;
     private String deadline;
